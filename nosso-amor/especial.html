@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Para Ti</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<header class="cabecalho">
+  <div class="logo">❤️ Nossa História</div>
+  <nav class="nav-links">
+    <a href="index.html">Início</a>
+    <a href="historia.html">Nossa História</a>
+    <a href="tempo.html">Nosso Tempo</a>
+    <a href="fotos.html">Fotos</a>
+    <a href="videos.html">Vídeos</a>
+    <a href="especial.html">Para Ti ❤️</a>
+  </nav>
+  <button class="menu-toggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+</header>
+
+<main>
+  <section class="especial-hero">
+    <div class="hero-coracao">❤️</div>
+    <h1 class="hero-nomes" style="font-size:clamp(1.8rem,6vw,3rem);">PARA TI</h1>
+    <p class="hero-frase">"Tenho algumas coisas para te dizer..."</p>
+
+    <div id="antes-video">
+      <a href="#" class="botao botao-cheio" id="btn-assistir">▶ Assistir</a>
+    </div>
+
+    <div id="depois-video" style="display:none; width:100%; max-width:640px;">
+  <video
+    id="video-especial"
+    controls
+    playsinline
+    preload="auto"
+    style="width:100%; height:auto;"
+  >
+    <source src="./videos/especial.mp4" type="video/mp4">
+    O teu navegador não consegue reproduzir este vídeo.
+  </video>
+</div>
+
+
+    <p class="especial-mensagem" id="mensagem-final">
+      ❤️<br><br>
+      Lembras-te daquele táxi? Dois desconhecidos, sem uma palavra trocada,
+      a caminho do mesmo lugar sem saber. Eu só sabia que ia para Cacuaco.
+      Não sabia que ia também na tua direção.
+      <br><br>
+      Segurei a tua mão para atravessarmos a estrada, e nunca mais a larguei.
+      Hoje sei que aquele gesto pequeno foi o início de tudo o que somos agora.
+      <br><br>
+      Obrigado por caminhares comigo. A nossa história ainda está a ser escrita,
+      e não há ninguém com quem eu prefira escrevê-la.
+      <br><br>❤️
+    </p>
+  </section>
+</main>
+
+<footer class="rodape">
+  <p data-frase-final>Esta história ainda está a ser escrita...</p>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/geral.js"></script>
+<script>
+  const btn = document.getElementById("btn-assistir");
+  const antes = document.getElementById("antes-video");
+  const depois = document.getElementById("depois-video");
+  const video = document.getElementById("video-especial");
+  const mensagem = document.getElementById("mensagem-final");
+
+  btn.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    antes.style.display = "none";
+    depois.style.display = "block";
+
+    video.load();
+
+    video.play().catch(function(error) {
+      console.log("O vídeo não iniciou automaticamente:", error);
+    });
+  });
+
+  video.addEventListener("ended", function() {
+    mensagem.classList.add("visivel");
+  });
+
+  video.addEventListener("error", function() {
+    console.error("Erro ao carregar videos/especial.mp4");
+  });
+</script>

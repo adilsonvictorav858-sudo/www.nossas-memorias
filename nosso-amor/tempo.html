@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nosso Tempo</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<header class="cabecalho">
+  <div class="logo">❤️ Nossa História</div>
+  <nav class="nav-links">
+    <a href="index.html">Início</a>
+    <a href="historia.html">Nossa História</a>
+    <a href="tempo.html">Nosso Tempo</a>
+    <a href="fotos.html">Fotos</a>
+    <a href="videos.html">Vídeos</a>
+    <a href="especial.html">Para Ti ❤️</a>
+  </nav>
+  <button class="menu-toggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+</header>
+
+<main>
+  <section class="secao">
+    <h1 class="secao-titulo">⏳ O Nosso Tempo</h1>
+    <p class="secao-sub">Estamos juntos há</p>
+
+    <div id="contador-tempo">
+      <div class="contador">
+        <div class="contador-item"><span class="numero" data-unit="anos">0</span><span class="label">Anos</span></div>
+        <div class="contador-item"><span class="numero" data-unit="meses">0</span><span class="label">Meses</span></div>
+        <div class="contador-item"><span class="numero" data-unit="dias">0</span><span class="label">Dias</span></div>
+        <div class="contador-item"><span class="numero" data-unit="horas">0</span><span class="label">Horas</span></div>
+        <div class="contador-item"><span class="numero" data-unit="minutos">0</span><span class="label">Min</span></div>
+        <div class="contador-item"><span class="numero" data-unit="segundos">0</span><span class="label">Seg</span></div>
+      </div>
+
+      <div class="contador-totais">
+        <div><strong data-unit="totalDias">0</strong>dias no total</div>
+        <div><strong data-unit="totalHoras">0</strong>horas no total</div>
+        <div><strong data-unit="totalMinutos">0</strong>minutos no total</div>
+        <div><strong data-unit="totalSegundos">0</strong>segundos no total</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao revelar" style="padding-top:0;">
+    <h2 class="secao-titulo" style="font-size:1.8rem;">🎂 Próximo Aniversário</h2>
+    <p class="secao-sub">Faltam</p>
+    <div class="contador" id="contador-aniversario">
+      <div class="contador-item"><span class="numero" data-unit="dias">0</span><span class="label">Dias</span></div>
+      <div class="contador-item"><span class="numero" data-unit="horas">0</span><span class="label">Horas</span></div>
+      <div class="contador-item"><span class="numero" data-unit="minutos">0</span><span class="label">Min</span></div>
+      <div class="contador-item"><span class="numero" data-unit="segundos">0</span><span class="label">Seg</span></div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <p data-frase-final>Esta história ainda está a ser escrita...</p>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/contador.js"></script>
+<script src="js/geral.js"></script>
+<script>
+  iniciarContadorPrincipal("contador-tempo", relacionamento.dataInicio);
+  iniciarContadorAniversario("contador-aniversario", relacionamento.dataInicio);
+</script>
+</body>
+</html>

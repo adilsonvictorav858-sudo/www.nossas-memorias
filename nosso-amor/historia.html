@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nossa História</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<header class="cabecalho">
+  <div class="logo">❤️ Nossa História</div>
+  <nav class="nav-links">
+    <a href="index.html">Início</a>
+    <a href="historia.html">Nossa História</a>
+    <a href="tempo.html">Nosso Tempo</a>
+    <a href="fotos.html">Fotos</a>
+    <a href="videos.html">Vídeos</a>
+    <a href="especial.html">Para Ti ❤️</a>
+  </nav>
+  <button class="menu-toggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+</header>
+
+<main>
+  <section class="secao">
+    <h1 class="secao-titulo">❤️ Nossa História</h1>
+    <p class="secao-sub">Cada capítulo da nossa jornada, até hoje</p>
+
+    <div class="timeline" id="timeline"></div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <p data-frase-final>Esta história ainda está a ser escrita...</p>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/geral.js"></script>
+<script>
+  // ===== TEXTO NOVO DO "PRIMEIRO ENCONTRO" =====
+  const capPrimeiroEncontro = historia.find(i => i.titulo && i.titulo.toLowerCase().includes("primeiro encontro"));
+  if (capPrimeiroEncontro) {
+    capPrimeiroEncontro.texto = "No dia seguinte começou o nosso segundo capítulo. Confesso que passei o dia inteiro a pensar em ti e, quando chegou a hora de nos encontrarmos, senti aquele nervosismo bom, o de quem sabe que algo importante está prestes a acontecer. Assim que te vi, percebi que aquilo não era só mais um encontro. Falámos durante horas e o tempo passou de uma forma que eu nunca tinha sentido. Parecia que já nos conhecíamos há muito tempo, como se o destino tivesse esperado apenas o momento certo para nos juntar. Foi algo muito especial para ambos, porque parecia que estávamos a viver algo que já estava predestinado. ❤️";
+  }
+
+  // ===== CONSTRUIR A LINHA DO TEMPO =====
+  const container = document.getElementById("timeline");
+  historia.forEach(item => {
+    const div = document.createElement("div");
+    div.className = "timeline-item revelar";
+    const dataFormatada = new Date(item.data).toLocaleDateString("pt-PT", { day: "2-digit", month: "long", year: "numeric" });
+    div.innerHTML = `
+      <div class="timeline-data">${dataFormatada}</div>
+      <h3 class="timeline-titulo">${item.titulo}</h3>
+      <p class="timeline-texto">${item.texto}</p>
+      ${item.foto ? `<div class="timeline-foto"><img src="${item.foto}" alt="${item.titulo}"></div>` : ""}
+    `;
+    container.appendChild(div);
+  });
+
+  // ===== HOJE =====
+  const hoje = document.createElement("div");
+  hoje.className = "timeline-item revelar";
+  hoje.innerHTML = `<h3 class="timeline-titulo">HOJE ❤️</h3><p class="timeline-texto">Hoje, ao olhar para trás, agradeço por cada pequeno detalhe: o táxi, a estrada atravessada, a mão que segurei sem saber o que estava a começar. Se aquele dia não tivesse acontecido, talvez nunca tivéssemos descoberto o quanto podemos ser felizes juntos. Cada dia ao teu lado torna-se uma nova memória que quero guardar para sempre. Esta página é só uma pequena parte de tudo o que sinto, porque há coisas que nem as palavras conseguem explicar. Mas uma coisa eu sei: a nossa história ainda tem muitas páginas por escrever, e quero escrevê-las todas contigo. E a história continua... ❤️</p>`;
+  container.appendChild(hoje);
+
+  // reobservar os itens criados dinamicamente
+  document.querySelectorAll(".revelar").forEach(el => {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visivel"); obs.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    obs.observe(el);
+  });
+</script>
+
+<!-- MÚSICA -->
+<script src="musica.js"></script>
+</body>
+</html>

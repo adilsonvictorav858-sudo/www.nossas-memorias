@@ -1,0 +1,50 @@
+@media (max-width: 760px) {
+  .nav-links {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--bg-alt);
+    border-bottom: 1px solid var(--linha);
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links.aberto {
+    max-height: 480px;
+  }
+
+  .nav-links a {
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--linha);
+  }
+
+  .menu-toggle { display: flex; }
+
+  .menu-toggle.ativo span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-toggle.ativo span:nth-child(2) { opacity: 0; }
+  .menu-toggle.ativo span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .secao { padding: 3.5rem 1.2rem; }
+
+  .atalhos { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+
+  .contador-item { min-width: 72px; padding: 0.9rem 1rem; }
+  .contador-item .numero { font-size: 1.6rem; }
+
+  .timeline { padding-left: 1.2rem; }
+  .timeline-item::before { left: -1.5rem; }
+
+  .lightbox-nav { width: 40px; height: 40px; font-size: 1.4rem; }
+}
+
+@media (max-width: 420px) {
+  .contador { gap: 0.6rem; }
+  .contador-item { min-width: 64px; padding: 0.7rem 0.6rem; }
+}
