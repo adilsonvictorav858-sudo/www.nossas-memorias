@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vídeos</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<header class="cabecalho">
+  <div class="logo">❤️ Nossa História</div>
+  <nav class="nav-links">
+    <a href="index.html">Início</a>
+    <a href="historia.html">Nossa História</a>
+    <a href="tempo.html">Nosso Tempo</a>
+    <a href="fotos.html">Fotos</a>
+    <a href="videos.html">Vídeos</a>
+    <a href="especial.html">Para Ti ❤️</a>
+  </nav>
+  <button class="menu-toggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+</header>
+
+<main>
+  <section class="secao">
+    <h1 class="secao-titulo">🎥 Vídeos</h1>
+    <p class="secao-sub">Os nossos momentos em movimento</p>
+
+    <!--
+      COMO ADICIONAR VÍDEOS:
+      1. Coloca o ficheiro .mp4 em videos/
+      2. Copia um bloco .video-card e ajusta título, data e src do <video>
+      3. Se o vídeo for grande, considera hospedá-lo fora do repositório
+         e usar aqui o link externo (ver secção 25 do plano)
+    -->
+
+    <div class="videos-grid revelar">
+      <div class="video-card">
+        <video controls preload="none" poster="">
+          <source src="videos/video01.mp4" type="video/mp4">
+        </video>
+        <div class="video-info">
+          <div class="video-titulo">Nosso primeiro vídeo</div>
+          <div class="video-data">DD/MM/AAAA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <p data-frase-final>Esta história ainda está a ser escrita...</p>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/geral.js"></script>
+</body>
+</html>

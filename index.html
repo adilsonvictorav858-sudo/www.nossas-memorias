@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nossa História</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<header class="cabecalho">
+  <div class="logo">❤️ Nossa História</div>
+  <nav class="nav-links">
+    <a href="index.html">Início</a>
+    <a href="historia.html">Nossa História</a>
+    <a href="tempo.html">Nosso Tempo</a>
+    <a href="fotos.html">Fotos</a>
+    <a href="videos.html">Vídeos</a>
+    <a href="especial.html">Para Ti ❤️</a>
+  </nav>
+  <button class="menu-toggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-coracao">❤️</div>
+    <h1 class="hero-nomes"><span data-nome1>Adilson</span><span class="amp"> &amp; </span><span data-nome2>Nome dela</span></h1>
+    <p class="hero-frase" data-frase>A nossa história começou aqui</p>
+
+    <p class="hero-desde">Desde</p>
+    <p class="hero-data" id="hero-data-inicio"></p>
+
+    <div class="contador" id="contador-hero">
+      <div class="contador-item"><span class="numero" data-unit="anos">0</span><span class="label">Anos</span></div>
+      <div class="contador-item"><span class="numero" data-unit="meses">0</span><span class="label">Meses</span></div>
+      <div class="contador-item"><span class="numero" data-unit="dias">0</span><span class="label">Dias</span></div>
+      <div class="contador-item"><span class="numero" data-unit="horas">0</span><span class="label">Horas</span></div>
+      <div class="contador-item"><span class="numero" data-unit="minutos">0</span><span class="label">Min</span></div>
+      <div class="contador-item"><span class="numero" data-unit="segundos">0</span><span class="label">Seg</span></div>
+    </div>
+
+    <a href="historia.html" class="botao botao-cheio">Nossa História</a>
+  </section>
+
+  <section class="secao">
+    <div class="atalhos revelar">
+      <a class="atalho-card" href="fotos.html">
+        <div class="atalho-icone">📸</div>
+        <div class="atalho-nome">Fotos</div>
+      </a>
+      <a class="atalho-card" href="videos.html">
+        <div class="atalho-icone">🎥</div>
+        <div class="atalho-nome">Vídeos</div>
+      </a>
+      <a class="atalho-card" href="especial.html">
+        <div class="atalho-icone">🎬</div>
+        <div class="atalho-nome">Vídeo Especial</div>
+      </a>
+      <a class="atalho-card" href="tempo.html">
+        <div class="atalho-icone">⏳</div>
+        <div class="atalho-nome">Nosso Tempo</div>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <p data-frase-final>Esta história ainda está a ser escrita...</p>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/contador.js"></script>
+<script src="js/geral.js"></script>
+<script src="js/musica.js"></script>
+<script>
+  document.getElementById("hero-data-inicio").textContent =
+    new Date(relacionamento.dataInicio).toLocaleDateString("pt-PT", { day: "2-digit", month: "long", year: "numeric" });
+  iniciarContadorPrincipal("contador-hero", relacionamento.dataInicio);
+</script>
+</body>
+</html>
